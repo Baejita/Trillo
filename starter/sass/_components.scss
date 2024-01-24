@@ -221,7 +221,7 @@
     display: flex;
     align-items: center;
 
-    border-bottom: 1px solid var(--color-Grey-light-2);
+    border-bottom: var(--line);
 
     
 
@@ -291,7 +291,7 @@
   border: none;
   color: var(--color-primary);
   font-size: inherit;
-  border-bottom: 1px solid currentColor;
+  border-bottom: var(--line);
   padding-bottom: 2px;
   display: inline-block;
   background-color: transparent;
@@ -327,3 +327,94 @@
  }
 
 }
+
+///////////////////////////////////
+// Paragraph styles
+.paragraph:not(:last-of-type){
+  margin-bottom: 2rem;
+
+}
+
+
+
+
+
+
+///////////////////////////////////
+// List 
+.list {
+  margin: 3rem 0;
+  list-style: none;
+  padding: 3rem 0;
+  border-top:var(--line);
+  border-bottom: var(--line) ;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%; //ใช้ flex wrap เพื่อกำหนดค่านี้ให้กลายเป็น 2 แุถวสวย ๆ
+    margin-bottom: .7rem ;
+  }
+
+  &__item::before{
+    content: "";
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: .7rem;
+
+    //Older browsers
+    // background-image: url(../img/chevron-thin-right.svg);
+    // background-size: cover;
+
+    //Newr browers - masks
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
+  }
+
+}
+///////////////////////////////////
+// Recommended
+
+.recommend{
+  font-size: 1.3rem;
+  color: var(--color-Grey-dark-3);
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+
+  &__count {
+    margin-right: auto;
+  }
+
+  &__friends{
+
+
+  }
+  &__photo{
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+
+    &:not(:last-child){
+      margin-right: -1.5rem;
+    }
+
+    border: 3px solid white;
+
+  }
+}
+
+
+
+
+
+
+
+///////////////////////////////////
+// Botton inline
